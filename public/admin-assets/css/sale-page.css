@@ -1,8 +1,9 @@
 
 .select2-container--default .select2-selection--single {
     height: 40px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-color: #bbc1c9;
+    box-shadow: none;
+    border-color: #d0d7e2;
+    background: #fff;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     height: 100%;
@@ -11,7 +12,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: gray;
+    color: #1f2937;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 100%;
@@ -55,15 +56,17 @@
     margin-bottom: 1rem;
 }
 .sale-cost-card {
-    border: 1px solid #ced4da;
+    border: 1px solid #e5eaf0;
     padding: 5px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: none;
+    border-radius: 10px;
+    background: #fff;
 }
 .sale-cost-card .row {
     background-color: #fff;
     margin: 0px;
     padding: 5px 10px;
-    border-bottom: 1px solid #ced4da81;
+    border-bottom: 1px solid #e5eaf0;
     justify-content: space-between;
 }
 .sale-cost-card .row:last-child {
@@ -78,8 +81,9 @@
     font-weight: 700;
 }
 .sale-cost-card .row > label  {
-    background-color: #f8f9fa;
+    background-color: #f8fafc;
     padding: 8px 10px;
     margin-right: 12px;
     width: calc(50% - 12px);
+    color: #6b7280;
 }

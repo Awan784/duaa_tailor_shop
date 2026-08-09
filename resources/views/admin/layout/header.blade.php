@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ asset('admin-assets/css/metisMenu.css')}}">
     <link rel="stylesheet" href="{{ asset('admin-assets/css/style1.css')}}"/>
     <link rel="stylesheet" id="colorSkinCSS" href="{{ asset('admin-assets/css/colors/default.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/css/duaa-theme.css')}}"/>
     @yield('css')
 </head>
 <body class="crm_body_bg">
@@ -40,6 +41,13 @@
                      <i class="ti-menu"></i>
                   </div>
                   <div class="serach_field-area d-flex align-items-center">
+                     <div class="duaa-header-brand">
+                        <img src="{{ asset('admin-assets/img/logo.png') }}" alt="Darzi Shop">
+                        <div>
+                           <p class="title">Darzi Shop</p>
+                           <p class="subtitle">Operations Dashboard</p>
+                        </div>
+                     </div>
                   </div>
                   <div class="header_right d-flex justify-content-between align-items-center">
                      <div class="profile_info">

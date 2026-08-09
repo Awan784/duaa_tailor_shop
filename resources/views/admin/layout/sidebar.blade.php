@@ -1,9 +1,9 @@
 
 <nav class="sidebar vertical-scroll  ps-container ps-theme-default ps-active-y">
     <div class="logo d-flex justify-content-center">
-       <a href="{{url('/dashboard')}}">
-        {{-- <img src="{{asset('admin-assets/img/logo.png')}}" alt> --}}
-        <h2>Darzi Shop</h2>
+       <a href="{{url('/dashboard')}}" class="duaa-sidebar-brand">
+        <span class="duaa-brand-text">DARZI</span>
+        <span class="duaa-brand-sub">SHOP</span>
       </a>
        <div class="sidebar_close_icon d-lg-none">
           <i class="ti-close"></i>
