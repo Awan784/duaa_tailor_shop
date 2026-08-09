@@ -11,6 +11,8 @@ use App\Http\Controllers\StockCategoryController;
 use App\Http\Controllers\StockUnitController;
 use App\Http\Controllers\StockSubCategoryController;
 use App\Http\Controllers\AssetsController;
+use App\Http\Controllers\BusinessExpenseController;
+use App\Http\Controllers\CashController;
 
 // use App\Http\Controllers\TailorController;
 
@@ -59,6 +61,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('assets/used/store', [AssetsController::class, 'storeUsedAssets'])->name('assets.used.store');
     Route::get('report/assets', [AssetsController::class, 'reportUsedAssets'])->name('report.assets');
     Route::get('report/assets/print', [AssetsController::class, 'ReportPrint'])->name('report.assets.print');
+
+    // Business Expenses
+    Route::resource('business-expenses', BusinessExpenseController::class)->except(['show']);
+    Route::get('report/business-expense', [BusinessExpenseController::class, 'report'])->name('report.business.expense');
+    Route::get('report/business-expense/print', [BusinessExpenseController::class, 'reportPrint'])->name('report.business.expense.print');
+
+    // Cash
+    Route::get('cash', [CashController::class, 'index'])->name('cash.index');
+    Route::get('cash/create', [CashController::class, 'create'])->name('cash.create');
+    Route::post('cash', [CashController::class, 'store'])->name('cash.store');
+    Route::get('cash/{id}/edit', [CashController::class, 'edit'])->name('cash.edit');
+    Route::put('cash/{id}', [CashController::class, 'update'])->name('cash.update');
+    Route::delete('cash/{id}', [CashController::class, 'destroy'])->name('cash.destroy');
 
 
 
