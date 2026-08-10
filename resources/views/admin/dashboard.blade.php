@@ -27,7 +27,7 @@
                         <div>
                             <span class="ds-kpi-label">Today Sales</span>
                             <h4>{{ number_format($stats['todaySales']) }}</h4>
-                            <small>${{ number_format($stats['todayRevenue'], 2) }} revenue</small>
+                            <small>{{ number_format($stats['todayRevenue'], 2) }} revenue</small>
                         </div>
                         <div class="ds-kpi-icon"><i class="fas fa-receipt"></i></div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="ds-kpi ds-kpi-gold">
                         <div>
                             <span class="ds-kpi-label">This Month</span>
-                            <h4>${{ number_format($stats['monthRevenue'], 2) }}</h4>
+                            <h4>{{ number_format($stats['monthRevenue'], 2) }}</h4>
                             <small>{{ number_format($stats['monthSales']) }} orders</small>
                         </div>
                         <div class="ds-kpi-icon"><i class="fas fa-chart-line"></i></div>
@@ -87,7 +87,7 @@
                 <div class="col-6 col-md-3">
                     <div class="ds-stat">
                         <span>Cash Received Today</span>
-                        <strong>${{ number_format($stats['todayCashReceived'], 2) }}</strong>
+                        <strong>{{ number_format($stats['todayCashReceived'], 2) }}</strong>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                                                     {{ $sale->status }}
                                                 </span>
                                             </td>
-                                            <td class="text-end">${{ number_format($sale->net_total, 2) }}</td>
+                                            <td class="text-end">{{ number_format($sale->net_total, 2) }}</td>
                                         </tr>
                                     @empty
                                         <tr>

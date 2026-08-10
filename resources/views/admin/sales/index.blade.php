@@ -129,7 +129,7 @@
                                             </span>
                                           @endauth
                                         </td>
-                                        <td>${{number_format($data->net_total, 2)}}</td>
+                                        <td>{{number_format($data->net_total, 2)}}</td>
                                         <td>
                                             @if(isset($data->createdByUser))
                                                 {{$data->createdByUser->name}}
