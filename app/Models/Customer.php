@@ -15,6 +15,11 @@ class Customer extends Model
     {
         return $this->hasMany(Sale::class, 'customer_id');
     }
+
+    public function shipments()
+    {
+        return $this->hasMany(Shipment::class, 'customer_id');
+    }
     public function ledgers(){
         return $this->hasMany(Ledger::class, 'customer_id')->where('customer_type','customer');
     }

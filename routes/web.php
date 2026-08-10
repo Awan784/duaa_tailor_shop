@@ -13,6 +13,7 @@ use App\Http\Controllers\StockSubCategoryController;
 use App\Http\Controllers\AssetsController;
 use App\Http\Controllers\BusinessExpenseController;
 use App\Http\Controllers\CashController;
+use App\Http\Controllers\ShipmentController;
 
 // use App\Http\Controllers\TailorController;
 
@@ -66,6 +67,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('business-expenses', BusinessExpenseController::class)->except(['show']);
     Route::get('report/business-expense', [BusinessExpenseController::class, 'report'])->name('report.business.expense');
     Route::get('report/business-expense/print', [BusinessExpenseController::class, 'reportPrint'])->name('report.business.expense.print');
+    Route::get('report/shipment', [ShipmentController::class, 'report'])->name('report.shipment');
+    Route::get('report/shipment/print', [ShipmentController::class, 'reportPrint'])->name('report.shipment.print');
 
     // Cash
     Route::get('cash', [CashController::class, 'index'])->name('cash.index');
@@ -74,6 +77,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('cash/{id}/edit', [CashController::class, 'edit'])->name('cash.edit');
     Route::put('cash/{id}', [CashController::class, 'update'])->name('cash.update');
     Route::delete('cash/{id}', [CashController::class, 'destroy'])->name('cash.destroy');
+
+    // Shipments
+    Route::get('shipments/customer-invoices/{customer}', [ShipmentController::class, 'customerInvoices'])->name('shipments.customerInvoices');
+    Route::resource('shipments', ShipmentController::class)->except(['show']);
 
 
 

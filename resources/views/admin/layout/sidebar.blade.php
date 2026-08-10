@@ -23,6 +23,7 @@
             || request()->is('expense*');
           $customerOpen = request()->is('customers*') || request()->is('customer*');
           $salesOpen = request()->is('sales*');
+          $shipmentsOpen = request()->is('shipments*');
           $assetsOpen = request()->is('assets*');
           $businessOpen = request()->is('business-expenses*');
           $cashOpen = request()->is('cash*');
@@ -126,6 +127,28 @@
                   </a>
                 </li>
               @endif
+            </ul>
+          </li>
+
+          {{-- Shipments --}}
+          <li class="{{ $shipmentsOpen ? 'mm-active' : '' }}">
+            <a class="has-arrow" href="#" aria-expanded="{{ $shipmentsOpen ? 'true' : 'false' }}">
+              <div class="icon_menu">
+                <img src="{{ asset('admin-assets/img/menu-icon/5.svg') }}" alt />
+              </div>
+              <span>Shipments</span>
+            </a>
+            <ul class="mm-collapse {{ $shipmentsOpen ? 'mm-show' : '' }}">
+              <li>
+                <a href="{{ route('shipments.index') }}" class="{{ request()->is('shipments') || request()->is('shipments/*/edit') ? 'active' : '' }}">
+                  Shipments
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('shipments.create') }}" class="{{ request()->is('shipments/create') ? 'active' : '' }}">
+                  Add Shipment
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -233,6 +256,9 @@
               </li>
               <li>
                 <a href="{{ route('report.business.expense') }}" class="{{ request()->is('report/business-expense*') ? 'active' : '' }}">Business Expense</a>
+              </li>
+              <li>
+                <a href="{{ route('report.shipment') }}" class="{{ request()->is('report/shipment*') ? 'active' : '' }}">Shipments</a>
               </li>
             </ul>
           </li>

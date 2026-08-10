@@ -25,6 +25,11 @@ class Sale extends Model
     {
         return $this->hasMany(Ledger::class, 'sale_id');
     }
+
+    public function shipments()
+    {
+        return $this->belongsToMany(Shipment::class, 'shipment_sale')->withTimestamps();
+    }
     public function ledgerAmount()
     {
         return $this->ledger->sum('amount');
